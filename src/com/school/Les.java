@@ -1,12 +1,24 @@
 package com.school;
-import java.time.LocalDateTime;
 
 public class Les {
     private String vak;
-    private LocalDateTime tijdVak;
 
-    public Les(String vak, LocalDateTime tijdVak) {
+    public Les(String vak) {
         this.vak = vak;
-        this.tijdVak = tijdVak;
+    }
+
+    public String getVak() {
+        return vak;
+    }
+
+    public void setVak(String vak) {
+        this.vak = vak;
+    }
+
+    @Override
+    public String toString() {
+        return "Les{" +
+                "vak='" + vak + '\'' +
+                '}';
     }
 }

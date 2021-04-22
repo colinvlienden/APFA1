@@ -24,4 +24,12 @@ public class Student {
     public String getKlas() {
         return klas;
     }
+
+    @Override
+    public String toString() {
+        return "Student: " +
+                naam +
+                " zit in klas: " +
+                klas;
+    }
 }
