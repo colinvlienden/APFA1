@@ -1,24 +1,18 @@
 package com.school;
 
-public class Student {
-    private String naam;
+public class Student extends Persoon implements Deelnemers {
+
+    private int studentNr;
     private String klas;
 
-    public Student(String naam, String klas) {
-        this.naam = naam;
+    public Student(String naam, int studentNr, String klas) {
+        super(naam);
+        this.studentNr = studentNr;
         this.klas = klas;
     }
 
-    public void setNaam(String naam) {
-        this.naam = naam;
-    }
-
-    public void setKlas(String klas) {
-        this.klas = klas;
-    }
-
-    public String getNaam() {
-        return naam;
+    public int getStudentNr() {
+        return studentNr;
     }
 
     public String getKlas() {
@@ -27,9 +21,10 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student: " +
-                naam +
-                " zit in klas: " +
-                klas;
+        return "Student{" +
+                "naam='" + getPersoon() + '\'' +
+                ", studentNr=" + studentNr +
+                ", klas='" + klas + '\'' +
+                '}';
     }
 }

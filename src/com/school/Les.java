@@ -1,24 +1,30 @@
 package com.school;
 
 public class Les {
-    private String vak;
+    private final Locatie locatie;
+    private final Deelnemers deelnemers;
+    private String tijdVak;
 
-    public Les(String vak) {
-        this.vak = vak;
-    }
+    public Les(Locatie locatie, Deelnemers deelnemers, String tijdVak) throws Exception {
+        this.locatie = locatie;
+        this.deelnemers = deelnemers;
+        this.tijdVak = tijdVak;
+        if (! deelnemers.getKlas().equals(locatie.getKlas())){
+            throw new Exception("Klas komt NIET overheen!");
+        }
+        else{
+            System.out.println("Klas komt overheen");
 
-    public String getVak() {
-        return vak;
-    }
+        }
 
-    public void setVak(String vak) {
-        this.vak = vak;
     }
 
     @Override
     public String toString() {
-        return "Les{" +
-                "vak='" + vak + '\'' +
-                '}';
+        return "Les: " + locatie.getKlas() +
+                "\nLokaal: " + locatie.getLokaalNr() +
+                "\nStudent: " + deelnemers.getPersoon() +
+                "\nStudentnummer: " + deelnemers.getStudentNr() +
+                "\ntijdvak: " + tijdVak + "\n";
     }
 }
